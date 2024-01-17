@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'drf_spectacular', # API document
     'user', # Declare User app
+    'recipe', # Enable Recipe app
 ]
 
 MIDDLEWARE = [
