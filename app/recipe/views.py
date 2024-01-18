@@ -7,6 +7,7 @@ from core.models import Recipe
 from recipe import serializers
 
 class RecipeViewSet(viewsets.ModelViewSet):
+    """This content will appear in the API documents"""
     # View for manage recipe apis
     # serializer_class = serializers.RecipeSerializer
     # bị thay khi thêm hàm get_serializer_class
@@ -24,6 +25,7 @@ class RecipeViewSet(viewsets.ModelViewSet):
 
     # Override - GET query set method
     def get_queryset(self):
+        """For queryset"""
         # Retrieve recipes for authenticated user
         return self.queryset.filter(user=self.request.user).order_by('-id')
 
@@ -38,3 +40,6 @@ class RecipeViewSet(viewsets.ModelViewSet):
     # For create recipe
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
+
+class TagViewSet(viewsets.ModelViewSet):
+    pass

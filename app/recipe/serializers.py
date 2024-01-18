@@ -2,6 +2,7 @@
 from rest_framework import serializers
 
 from core.models import Recipe
+from core.models import Tag
 
 
 class RecipeSerializer(serializers.ModelSerializer):
@@ -26,3 +27,10 @@ class RecipeDetailSerializer(RecipeSerializer):
         # Khai báo các field cần dùng: dùng hết các fields của base class
         # Lấy thêm description
         fields =RecipeSerializer.Meta.fields + ['description']
+
+
+class TagSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Tag
+        fields =['id','name']
+        read_only_fields = ['id']

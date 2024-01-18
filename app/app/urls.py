@@ -30,5 +30,6 @@ urlpatterns = [
         name='api-docs',
         ),
     path('api/user/', include('user.urls')),
-    path('api/recipe', include('recipe.urls'))
+    # Function-based view xxx.
+    path('api/recipe/', include('recipe.urls')),
 ]
